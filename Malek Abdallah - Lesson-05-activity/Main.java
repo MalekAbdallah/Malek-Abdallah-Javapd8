@@ -19,7 +19,7 @@ int elmo = 10;
 
 double z = poofy + elmo;
 
-Systems.out.println("z");
+System.out.println(z);
 
 
 
