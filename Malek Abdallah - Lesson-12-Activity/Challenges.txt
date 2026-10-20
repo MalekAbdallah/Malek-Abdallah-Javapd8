@@ -1,0 +1,149 @@
+
+
+Challenge 1:
+Write a function creditCardType that accepts the a credit card number (as a string) and returns back the type of credit card that is determined by the starting numbers:
+Starts with:
+4 - Visa
+34 or 37 - America Express
+36 - Diner Club
+51 or 55 - Mastercard
+6011 or 65 - Discovery
+creditcardType.Substring
+
+String creditCardType(String creditCardNumber) {
+    if (creditCardNumber.startsWith("4")) {
+        return "Visa";
+    }
+    else if (creditCardNumber.startsWith("34") ||
+             creditCardNumber.startsWith("37")) {
+        return "American Express";
+    }
+    else if (creditCardNumber.startsWith("36")) {
+        return "Diner Club";
+    }
+    else if (creditCardNumber.startsWith("51") ||
+             creditCardNumber.startsWith("55")) {
+        return "Mastercard";
+    }
+    else if (creditCardNumber.startsWith("6011") ||
+             creditCardNumber.startsWith("65")) {
+        return "Discovery";
+    }
+    else {
+        return "Unknown";
+    }
+}
+
+Challenge 2:
+Write a function pigLatin which accepts a word and return a new word made up by switch the fist letter to the end of the word and adding a "ay" after. Example: "pig"==> "igpay" Challenge 2:
+
+String pigLatin(String word) {
+    return word.substring(1) + word.substring(0, 1) + "ay";
+}
+
+Challenge 3:
+
+Write a function nycLocate that accepts a zip code (as a string) and returns where in NYC the zip code is by examing the first three numbers of the zip code:
+
+Manhattan starting with :100,101, 102
+Staten Island  : 103
+Bronx : 104
+Brooklyn : 112
+Queens : 113, 114, 111
+
+
+String nycLocate(String zipCode) {
+    String firstThree = zipCode.substring(0, 3);
+
+    if (firstThree.equals("100") || firstThree.equals("101") ||
+        firstThree.equals("102")) {
+        return "Manhattan";
+    }
+    else if (firstThree.equals("103")) {
+        return "Staten Island";
+    }
+    else if (firstThree.equals("104")) {
+        return "Bronx";
+    }
+    else if (firstThree.equals("112")) {
+        return "Brooklyn";
+    }
+    else if (firstThree.equals("113") || firstThree.equals("114") ||
+             firstThree.equals("111")) {
+        return "Queens";
+    }
+    else {
+        return "Not NYC";
+    }
+}
+
+
+
+
+Challenge 4:
+Create a function getMonth that accepts a date in the form MM/DD/YYYY and returns the month: Example 07/21/2023 ==> "July"
+
+String getMonth(String date) {
+    String month = date.substring(0, 2);
+
+    if (month.equals("01")) {
+        return "January";
+    }
+    else if (month.equals("02")) {
+        return "February";
+    }
+    else if (month.equals("03")) {
+        return "March";
+    }
+    else if (month.equals("04")) {
+        return "April";
+    }
+    else if (month.equals("05")) {
+        return "May";
+    }
+    else if (month.equals("06")) {
+        return "June";
+    }
+    else if (month.equals("07")) {
+        return "July";
+    }
+    else if (month.equals("08")) {
+        return "August";
+    }
+    else if (month.equals("09")) {
+        return "September";
+    }
+    else if (month.equals("10")) {
+        return "October";
+    }
+    else if (month.equals("11")) {
+        return "November";
+    }
+    else if (month.equals("12")) {
+        return "December";
+    }
+    else {
+        return "Invalid Month";
+    }
+}
+
+Challenge 5:
+
+Create a function validatePswd that accepts a password. The password must have 5 to 8 characters that are letters, numbers or any symbol except ^, *, (, ) 
+
+Return true if it's valid, otherwise return false.
+
+
+boolean validatePswd(String password) {
+    if (password.length() < 5 || password.length() > 8) {
+        return false;
+    }
+
+    if (password.contains("^") || password.contains("*") ||
+        password.contains("(") || password.contains(")")) {
+        return false;
+    }
+
+    return true;
+}
+
