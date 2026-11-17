@@ -1,0 +1,112 @@
+
+Challenge 1:
+Suppose you are given a choice between getting 5 dollars verse getting a penny on day one that doubles every day.  How many days will it take for the a penny double every day take to get to or surpass $5?
+
+Write a function allowance that solves how many days it takes.
+void allowance() {
+        double money = 0.01;
+        int days = 1;
+
+        while (money < 5) {
+            money *= 2;
+            days++;
+        }
+
+        System.out.println("Days: " + days);
+        System.out.println("Amount: $" + money);
+    }
+Challenge 2:
+Write a function addTwoNumbers that generates two random integers, then ask the user what is the sum of these two numbers.  Allow the user to keep try until they get it correct.
+void addTwoNumbers() {
+        int num1 = rand.nextInt(100) + 1;
+        int num2 = rand.nextInt(100) + 1;
+
+        System.out.println("What is " + num1 + " + " + num2 + "?");
+        int answer = input.nextInt();
+
+        while (answer != num1 + num2) {
+            System.out.println("Incorrect! Try again.");
+            answer = input.nextInt();
+        }
+
+        System.out.println("Correct!");
+    }
+Challenge 3:
+Write a function GCF that accepts two integers, calculates and returns the GCF (greatest common facter) of the two integers.
+int GCF(int num1, int num2) {
+        num1 = Math.abs(num1);
+        num2 = Math.abs(num2);
+
+        while (num2 != 0) {
+            int temp = num2;
+            num2 = num1 % num2;
+            num1 = temp;
+        }
+
+        return num1;
+    }
+
+Challenge 4:
+Write a menu function called menu that allows a user to choose one of the three functions written above. Also include a choice to exit out.
+Example:
+Welcome Looney Tune's System
+Select from the following choices:
+1 - Allowance
+2 - Addition game
+3 - Calculate the GCF of two integers
+4 - Exit Looney Tune System
+void menu() {
+        int choice = 0;
+
+        while (choice != 4) {
+            System.out.println("\nWelcome Looney Tune's System");
+            System.out.println("1 - Allowance");
+            System.out.println("2 - Addition game");
+            System.out.println("3 - Calculate the GCF of two integers");
+            System.out.println("4 - Exit Looney Tune System");
+
+            choice = input.nextInt();
+
+            if (choice == 1) {
+                allowance();
+            }
+            else if (choice == 2) {
+                addTwoNumbers();
+            }
+            else if (choice == 3) {
+                System.out.print("Enter first integer: ");
+                int a = input.nextInt();
+
+                System.out.print("Enter second integer: ");
+                int b = input.nextInt();
+
+                System.out.println("GCF: " + GCF(a, b));
+            }
+            else if (choice == 4) {
+                System.out.println("Goodbye!");
+            }
+            else {
+                System.out.println("Invalid choice!");
+            }
+        }
+    }
+
+
+Bonus Challenge:
+We want to create a rock paper scissors game.  The game is the user agains the computer.  You'll ask the user to choose 1 for rock, 2 for paper and 3 for scissor. So there will be three possible outcomes: draw, win, lose.
+
+The rules are has follow:
+If the player and the computer choose the same, it's a draw and play again.
+Rock beats scissors
+Rock loses against paper
+Paper loses against scissors
+
+
+rock paper scissor
+
+
+
+
+
+
+
