@@ -1,0 +1,34 @@
+Problem 1:
+
+In the init function, create an array of friends.
+void init() {
+    friends = new Friend[] {
+        new Friend("Moazzam"),
+        new Friend("Daniel"),
+        new Friend("Chris")
+    };
+}
+
+
+Problem 2:
+
+Write a function convert that accepts an array of temperatures in celsius and converts each temperature to farhenheit and returns a new array with the convert temperatures.
+
+Use the CelsiusToFarhenheit function given to you.
+
+double[] convert(double[] celsius) {
+    double[] fahrenheit = new double[celsius.length];
+
+    for (int i = 0; i < celsius.length; i++) {
+        fahrenheit[i] = CelsiusToFarhenheit(celsius[i]);
+    }
+
+    return fahrenheit;
+}
+
+
+NOTE: to test this function, create an array temperatues in celsius which you will pass to test your new function.
+
+
+
+
